@@ -41,10 +41,12 @@ This up to date guide is designed to help other Udacity students with the final 
  7. Lets switch to the root user by typing `sudo su -`
  8. As Udacity requires we need to create a user called `grader`. From the command line type `$ sudo adduser grader`. It will ask for 2 passwords and then a few other fields which you can leave blank.
  9. We must create a file to give the user grader superuser privileges. To do this type `$ sudo nano /etc/sudoers.d/grader`. This will create a new file that will be the superuser configuration for grader. When nano opens type `grader ALL=(ALL:ALL)`, to save the file hit Ctrl-X on your keyboard, type 'Y' to save, and return to save the filename.
- 10. One of the first things you should always do when configuring a Linux server is updating it's package list and upgrading the current packages with these two commands:
+ 10. One of the first things you should always do when configuring a Linux server is updating it's package list, upgrading the current packages, and install new updates with these three commands:
  ```
  $ sudo apt-get update
  $ sudo apt-get upgrade
+ $ sudo apt-get dist-upgrade
+ 
  ```
  11. We will also install a useful tool called **Finger** with the command  `$ sudo apt-get install finger`. This tool will allow us to see the users on this server.
  12. Now we must create an SSH Key for our new user **grader**. From a new terminal run the command: `$ ssh-keygen -f ~/.ssh/udacity.rsa`
